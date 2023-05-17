@@ -9,16 +9,21 @@ parameters = [
   { name: "dev.catalogue.mongo_endpoint", value ="mongodb://mongodb-dev.r1devopsb.online:27017/catalogue"},
   { name: "dev.user.mongo", value ="MONGO=true"},
   { name: "dev.user.redis_host", value ="redis-dev.r1devopsb.online"},
-  { name: "dev.user.rmongo_url", value ="mongodb://mongodb-dev.r1devopsb.online:27017/users"}
+  { name: "dev.user.mongo_url", value ="mongodb://mongodb-dev.r1devopsb.online:27017/users"},
+
+  { name: "dev.cart.redis_host", value ="redis-dev.r1devopsb.online"},
+  { name: "dev.cart.catalogue_host", value ="catalogue-dev.r1devopsb.online"},
+  { name: "dev.cart.catalogue_port", value ="8080"}
 ]
 
-  /*Environment=MONGO=true
-Environment=REDIS_HOST=redis-dev.r1devopsb.online
-Environment=MONGO_URL="mongodb://mongodb-dev.r1devopsb.online:27017/users"
+  /*
+REDIS_HOST=redis-dev.r1devopsb.online
+Environment=CATALOGUE_HOST=catalogue-dev.r1devopsb.online
+Environment=CATALOGUE_PORT=8080
 
-{{ lookup('aws_ssm', 'dev.user.mongo', region='us-east-1 )}}
-{{ lookup('aws_ssm', 'dev.user.redis_host', region='us-east-1 )}}
-{{ lookup('aws_ssm', 'dev.user.mongo_url', region='us-east-1 )}}
+{{ lookup('aws_ssm', 'dev.cart.mongo', region='us-east-1 )}}
+{{ lookup('aws_ssm', 'dev.cart.catalogue_host', region='us-east-1 )}}
+{{ lookup('aws_ssm', 'dev.cart.catalogue_port', region='us-east-1 )}}
 dev.user.mongo
  "dev.user.redis_host"
  "dev.user.mongo_url"
