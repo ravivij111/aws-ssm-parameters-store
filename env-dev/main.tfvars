@@ -13,16 +13,23 @@ parameters = [
 
   { name: "dev.cart.redis_host", value ="redis-dev.r1devopsb.online"},
   { name: "dev.cart.catalogue_host", value ="catalogue-dev.r1devopsb.online"},
-  { name: "dev.cart.catalogue_port", value ="8080"}
+  { name: "dev.cart.catalogue_port", value ="8080"},
+
+  { name: "dev.shipping.cart.end_point", value ="cart-dev.r1devopsb.online:8080"},
+
+  { name: "dev.shipping.db_host", value ="mysql-dev.r1devopsb.online"},
+  { name: "dev.shipping.db_user", value ="root"},
+  { name: "dev.shipping.db_pass", value ="RoboShop@1"}
+  #{ name: "", value =""}
 ]
 
-  /*
-REDIS_HOST=redis-dev.r1devopsb.online
-Environment=CATALOGUE_HOST=catalogue-dev.r1devopsb.online
-Environment=CATALOGUE_PORT=8080
 
-{{ lookup('aws_ssm', 'dev.cart.mongo', region='us-east-1 )}}
-{{ lookup('aws_ssm', 'dev.cart.catalogue_host', region='us-east-1 )}}
+  /*
+cart-dev.r1devopsb.online:8080
+Environment=DB_HOST=mysql-dev.r1devopsb.online
+
+{{ lookup('aws_ssm', '', region='us-east-1 )}}
+{{ lookup('aws_ssm', '', region='us-east-1 )}}
 {{ lookup('aws_ssm', 'dev.cart.catalogue_port', region='us-east-1 )}}
 dev.user.mongo
  "dev.user.redis_host"
