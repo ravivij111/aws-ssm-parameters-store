@@ -14,10 +14,20 @@ resource "aws_ssm_parameter" "parameter" {
 } */
 
 #Creating the dns urls of each component in the ssm parameter with aws KMS service
+/*
 resource "aws_ssm_parameter" "parameters" {
   count = length(var.parameters)
   name  = var.parameters[count.index].nam
   type  = "SecureString"
   value = "Hello World"
+  key_id = "[Give the aws KMS ID]"
+} */
+
+
+resource "aws_ssm_parameter" "passwords" {
+  count = length(var.passwords)
+  name  = var.parameters[count.index].name
+  value  = var.parameters[count.index].value
+  type  = "SecureString"
   key_id = "[Give the aws KMS ID]"
 }

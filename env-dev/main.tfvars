@@ -32,6 +32,11 @@ parameters = [
   #{ name: "", value =""}
 ]
 
+password =[
+  { name = "dev.payment.rabbitmq_pass", value = "roboshop123" },
+  { name = "dev.shipping.db_pass", value = "RoboShop@123" }
+]
+
 
   /*
 cart-dev.r1devopsb.online:8080
