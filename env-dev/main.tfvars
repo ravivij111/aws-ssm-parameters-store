@@ -19,7 +19,16 @@ parameters = [
 
   { name: "dev.shipping.db_host", value ="mysql-dev.r1devopsb.online"},
   { name: "dev.shipping.db_user", value ="root"},
-  { name: "dev.shipping.db_pass", value ="RoboShop@1"}
+  { name: "dev.shipping.db_pass", value ="RoboShop@1"},
+
+  { name: "dev.payment.cart_host", value ="cart-dev.r1devopsb.online"},
+  { name: "dev.payment.cart_port", value ="8080"},
+  { name: "dev.payment.user_host", value ="user-dev.r1devopsb.online"},
+  { name: "dev.payment.user_port", value ="8080"},
+  { name: "dev.payment.rabbitmq_host", value ="rabbitmq-dev.r1devopsb.online"},
+  { name: "dev.payment.rabbitmq_user", value ="roboshop"},
+  { name: "dev.payment.rabbitmq_pass", value ="roboshop123"}
+
   #{ name: "", value =""}
 ]
 
@@ -28,10 +37,21 @@ parameters = [
 cart-dev.r1devopsb.online:8080
 Environment=DB_HOST=mysql-dev.r1devopsb.online
 
-{{ lookup('aws_ssm', '', region='us-east-1 )}}
-{{ lookup('aws_ssm', '', region='us-east-1 )}}
-{{ lookup('aws_ssm', 'dev.cart.catalogue_port', region='us-east-1 )}}
-dev.user.mongo
- "dev.user.redis_host"
- "dev.user.mongo_url"
+{{ lookup('aws_ssm', 'dev.payment.cart_host', region='us-east-1 )}}
+{{ lookup('aws_ssm', 'dev.payment.cart_port', region='us-east-1 )}}
+{{ lookup('aws_ssm', 'dev.payment.user_host', region='us-east-1 )}}
+{{ lookup('aws_ssm', 'dev.payment.user_port', region='us-east-1 )}}
+{{ lookup('aws_ssm', 'dev.payment.rabbitmq_host', region='us-east-1 )}}
+{{ lookup('aws_ssm', 'dev.payment.rabbitmq_user', region='us-east-1 )}}
+{{ lookup('aws_ssm', 'dev.payment.rabbitmq_pass', region='us-east-1 )}}
+
+
+Environment=CART_HOST=cart-dev.r1devopsb.online
+Environment=CART_PORT=8080
+Environment=USER_HOST=user-dev.r1devopsb.online
+Environment=USER_PORT=8080
+Environment=AMQP_HOST=rabbitmq-dev.r1devopsb.online
+Environment=AMQP_USER=roboshop
+Environment=AMQP_PASS=rabbitmq_appuser_password
+
 */
