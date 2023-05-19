@@ -10,6 +10,7 @@ parameters = [
   { name: "dev.user.mongo", value ="MONGO=true"},
   { name: "dev.user.redis_host", value ="redis-dev.r1devopsb.online"},
   { name: "dev.user.mongo_url", value ="mongodb://mongodb-dev.r1devopsb.online:27017/users"},
+  { name: "dev.user.mongo_endpoint", value ="mongodb-dev.r1devopsb.online"},
 
   { name: "dev.cart.redis_host", value ="redis-dev.r1devopsb.online"},
   { name: "dev.cart.catalogue_host", value ="catalogue-dev.r1devopsb.online"},
