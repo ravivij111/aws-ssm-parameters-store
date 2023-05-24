@@ -32,10 +32,19 @@ resource "aws_ssm_parameter" "parameters" {
 #  key_id = "[Give the aws KMS ID]"
 #}
 
+#resource "aws_ssm_parameter" "passwords" {
+#
+#  name  = "test.test1"
+#  value  = "Hello Guru"
+#  type  = "String"
+# // key_id = "Hello Guru"
+#}
+
 resource "aws_ssm_parameter" "passwords" {
 
   name  = "test.test1"
   value  = "Hello Guru"
-  type  = "String"
- // key_id = "Hello Guru"
+  type  = "SecureString"
+  key_id = "8b1602a1-454f-4ec2-88c9-0d5131de32e2"
+  // key_id = "Hello Guru"
 }
