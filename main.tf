@@ -35,7 +35,7 @@ resource "aws_ssm_parameter" "parameters" {
 resource "aws_ssm_parameter" "passwords" {
 
   name  = "test.test1"
-  value  = "String"
+  value  = "Hello Guru"
   type  = "String"
-  key_id = "Hello Guru"
+ // key_id = "Hello Guru"
 }
