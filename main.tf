@@ -1,27 +1,13 @@
-/*#Creating the ssm parameter
-resource "aws_ssm_parameter" "parameter" {
-  name  = "test.test1"
-  type  = "String"
-  value = "Hello World"
-} */
-/*
-#Creating the secured ssm parameter with aws KMS service
-resource "aws_ssm_parameter" "parameter" {
-  name  = "test.test1"
-  type  = "SecureString"
-  value = "Hello World"
-  key_id = "[Give the aws KMS ID]"
-} */
+
 
 #Creating the dns urls of each component in the ssm parameter with aws KMS service
-/*
 resource "aws_ssm_parameter" "parameters" {
   count = length(var.parameters)
-  name  = var.parameters[count.index].nam
+  name  = var.parameters[count.index].name
   type  = "SecureString"
-  value = "Hello World"
-  key_id = "[Give the aws KMS ID]"
-} */
+  value = var.parameters[count.index].value
+  key_id = "8b1602a1-454f-4ec2-88c9-0d5131de32e2"
+}
 
 
 #resource "aws_ssm_parameter" "passwords" {
@@ -32,19 +18,17 @@ resource "aws_ssm_parameter" "parameters" {
 #  key_id = "[Give the aws KMS ID]"
 #}
 
-#resource "aws_ssm_parameter" "passwords" {
-#
-#  name  = "test.test1"
-#  value  = "Hello Guru"
-#  type  = "String"
-# // key_id = "Hello Guru"
-#}
-
-resource "aws_ssm_parameter" "passwords" {
-
+/*#Creating the ssm parameter
+resource "aws_ssm_parameter" "parameter" {
+  name  = "test.test1"
+  type  = "String"
+  value = "Hello World"
+} */
+/*
+#Creating the secured ssm parameter with aws KMS service
+resource "aws_ssm_parameter" "parameter1" {
   name  = "test.test1"
   value  = "Hello Guru"
   type  = "SecureString"
   key_id = "8b1602a1-454f-4ec2-88c9-0d5131de32e2"
-  // key_id = "Hello Guru"
-}
+} */
