@@ -36,6 +36,6 @@ resource "aws_ssm_parameter" "passwords" {
 
   name  = "test.test1"
   value  = "String"
-  type  = "String "
+  type  = "String"
   key_id = "Hello Guru"
 }
