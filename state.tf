@@ -6,3 +6,8 @@
   }
 }*/
 
+terraform {
+  backend "local" {
+
+  }
+}
